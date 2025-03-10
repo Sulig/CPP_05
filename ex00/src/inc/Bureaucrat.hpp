@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 16:37:30 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/10 17:20:21 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/10 19:04:13 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ class	Bureaucrat
 				virtual const char	*what() const throw();
 		};
 };
+
+std::ostream	&operator<<(std::ostream &out, Bureaucrat const &bureaucrat);
 
 #endif

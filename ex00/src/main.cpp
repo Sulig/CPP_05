@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 16:38:02 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/10 17:59:22 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/10 19:06:36 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ int	main()
 
 	//They're Experts Bob, EXPERTS! 'Quote from Gilbert of The Increibles'
 	std::cout << std::endl << "Bureaucrats created" << std::endl;
-	std::cout << bob.getName() << " has a grade of " << bob.getGrade() << std::endl;
-	std::cout << gilbert.getName() << " has a grade of " << gilbert.getGrade() << std::endl;
+	std::cout << bob << std::endl;
+	std::cout << gilbert << std::endl;
 	std::cout << std::endl;
 
 	bob.incrementGrade();
 	gilbert.decrementGrade();
 
 	std::cout << "Bureaucrats' grades changed" << std::endl;
-	std::cout << bob.getName() << " has a grade of " << bob.getGrade() << std::endl;
-	std::cout << gilbert.getName() << " has a grade of " << gilbert.getGrade() << std::endl;
+	std::cout << bob << std::endl;
+	std::cout << gilbert << std::endl;
 	std::cout << std::endl;
 
 	/* Try to create a bureaucrat with an invalid grade
@@ -58,7 +58,7 @@ int	main()
 	std::cout << std::endl;
 
 	//Try to reduce bob's grade to 151
-	std::cout << bob.getName() << " has a grade of " << bob.getGrade() << std::endl;
+	std::cout << bob << std::endl;
 	bob.decrementGrade();
 	/**/
 	try
@@ -73,7 +73,7 @@ int	main()
 	/*--*/
 
 	//Try to increase gilbert's grade to 0
-	std::cout << gilbert.getName() << " has a grade of " << gilbert.getGrade() << std::endl;
+	std::cout << gilbert << std::endl;
 	gilbert.incrementGrade();
 	/**/
 	try

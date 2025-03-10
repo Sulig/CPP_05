@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 16:37:43 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/10 18:15:32 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/10 19:05:28 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ Bureaucrat::~Bureaucrat()
 /* ----- */
 
 /* Operator overloads */
+std::ostream	&operator<<(std::ostream &out, Bureaucrat const &bureaucrat)
+{
+	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	return (out);
+}
+
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	if (this != &rhs)

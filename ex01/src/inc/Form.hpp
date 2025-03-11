@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 19:08:26 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/10 19:55:15 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/11 15:37:32 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FORM_HPP
 
 # include "color.hpp"
-# include "Bureaucrat.hpp"
 
 # include <stdexcept>
 
@@ -23,6 +22,8 @@
 
 # define F_MAX_GRADE 1
 # define F_MIN_GRADE 150
+
+class	Bureaucrat;
 
 class	Form
 {

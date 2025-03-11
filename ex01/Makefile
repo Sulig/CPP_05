@@ -6,11 +6,11 @@
 #    By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:01:41 by sadoming          #+#    #+#              #
-#    Updated: 2025/03/10 16:37:04 by sadoming         ###   ########.fr        #
+#    Updated: 2025/03/11 15:45:31 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= Bureaucrat
+NAME	:= Forms
 # ------------------ #
 # Flags:
 
@@ -41,7 +41,7 @@ OBJ_DIR		:=	./obj
 MAK	:= Makefile
 HDR	:= $(INC_DIR)/ # Headers
 
-SRC_SRC := main.cpp Bureaucrat.cpp
+SRC_SRC := main.cpp Bureaucrat.cpp Form.cpp
 
 SRC := $(addprefix $(SRC_DIR), $(SRC_SRC))
 

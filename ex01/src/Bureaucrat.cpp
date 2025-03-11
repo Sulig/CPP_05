@@ -6,11 +6,12 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 16:37:43 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/10 19:40:22 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/11 15:37:42 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./inc/Bureaucrat.hpp"
+#include "./inc/Form.hpp"
 
 /* Constructor & destructor */
 Bureaucrat::Bureaucrat() : _name("Bob"), _grade(B_MIN_GRADE)
@@ -93,5 +94,17 @@ void	Bureaucrat::decrementGrade()
 		this->_grade++;
 }
 
-
+void	Bureaucrat::signForm(Form *form)
+{
+	if (form->getSigned())
+		std::cout << this->_name << " cannot sign " << form->getName() << " because it's already signed";
+	else if (this->_grade > form->getGradeToSign())
+		std::cout << this->_name << " cannot sign " << form->getName() << " because grade is too low";
+	else
+	{
+		form->beSigned(*this);
+		std::cout << this->_name << " signs " << form->getName();
+	}
+	std::cout << std::endl;
+}
 /* ----- */

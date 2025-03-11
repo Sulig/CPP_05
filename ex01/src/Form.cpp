@@ -6,11 +6,12 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 19:40:29 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/10 20:03:26 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/11 15:37:53 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./inc/Form.hpp"
+#include "./inc/Bureaucrat.hpp"
 
 /* Constructor & destructor */
 Form::Form() : _name("Default")
@@ -107,6 +108,9 @@ void	Form::beSigned(Bureaucrat const &bureaucrat)
 	else if (this->_signed)
 		std::cout << "Form " << this->_name << " is already signed" << std::endl;
 	else
+	{
 		this->_signed = true;
+		std::cout << "Form " << this->_name << " signed by " << bureaucrat.getName() << std::endl;
+	}
 }
 /* ----- */

@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 16:38:02 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/12 14:19:46 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/12 16:19:23 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "inc/AForm.hpp"
 #include "inc/ShrubberyCreationForm.hpp"
 #include "inc/RobotomyRequestForm.hpp"
+#include "inc/PresidentialPardonForm.hpp"
 
 int	main()
 {
@@ -198,7 +199,55 @@ int	main()
 	}
 	/**/
 	/*** Presidential Pardon */
+	PresidentialPardonForm	presidential("Zaphod Beeblebrox");
 
+	std::cout << std::endl << "Presidential Pardon Form created" << std::endl;
+	std::cout << presidential << std::endl;
+
+	// Try to sign a form with a bureaucrat with a grade too low
+	std::cout << "Try to sign a form with a bureaucrat with a grade too low" << std::endl;
+	/**/
+	try
+	{
+		presidential.beSigned(bob);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	/**/
+
+	// Sign and execute the form!
+	std::cout << std::endl;
+	std::cout << "Try to Singing " << presidential.getName() << std::endl;
+	/**/
+	try
+	{
+		bob.signForm(&presidential);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	/**/
+	/**/
+	std::cout << "Singing " << presidential.getName() << std::endl;
+	gilbert.signForm(&presidential);
+
+	std::cout << "Executing " << presidential.getName() << std::endl;
+	presidential.execute(gilbert);
+
+	std::cout << "Try to execute" << presidential.getName() << std::endl;
+	/**/
+	try
+	{
+		presidential.execute(bob);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	/**/
 
 	/*--*/
 	/**** */

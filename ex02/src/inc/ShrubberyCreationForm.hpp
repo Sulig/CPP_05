@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:22:16 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/11 20:02:06 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/12 13:19:02 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <fstream>
 # include <cstdlib>
 
-# define MIN_GRADE_TO_SIGN		145
-# define MIN_GRADE_TO_EXECUTE	137
+# define S_MIN_GRADE_TO_SIGN	145
+# define S_MIN_GRADE_TO_EXECUTE	137
 # define TARGET_FILENAME		"_shrubbery"
 # define THIS_DIRECTORY			"."
 # define HOME_DIRECTORY			"~"
@@ -31,6 +31,9 @@ class	Bureaucrat;
 
 class	ShrubberyCreationForm : public AForm
 {
+	private:
+		std::string	_target;
+
 	public:
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string const target);
@@ -48,9 +51,6 @@ class	ShrubberyCreationForm : public AForm
 			public:
 				virtual const char	*what() const throw();
 		};
-
-	private:
-		std::string	_target;
 };
 
 std::ostream	&operator<<(std::ostream &out, ShrubberyCreationForm const &form);

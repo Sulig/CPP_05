@@ -6,13 +6,14 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 16:38:02 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/11 19:01:20 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/12 14:19:46 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/Bureaucrat.hpp"
 #include "inc/AForm.hpp"
 #include "inc/ShrubberyCreationForm.hpp"
+#include "inc/RobotomyRequestForm.hpp"
 
 int	main()
 {
@@ -89,17 +90,18 @@ int	main()
 	}
 	/**/
 	/*--*/
-	/**** */
+	/******************* */
 
-	/*** Forms */
+	/************* Forms */
+	/// Can't create a form with invalid grades
+	/**/
+	/*** Shrubbery */
 	ShrubberyCreationForm	shrubbery(HOME_DIRECTORY);
 	ShrubberyCreationForm	shrubbery2(THIS_DIRECTORY);
 
-	std::cout << std::endl << "Forms created" << std::endl;
+	std::cout << std::endl << "Shrubbery Forms created" << std::endl;
 	std::cout << shrubbery << std::endl;
 	std::cout << shrubbery2 << std::endl;
-
-	// Can't create a form with invalid grades
 
 	// Try to sign a form with a bureaucrat with a grade too low
 	std::cout << "Try to sign a form with a bureaucrat with a grade too low" << std::endl;
@@ -145,6 +147,57 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 	/**/
+	/*** Robotomy */
+	RobotomyRequestForm	robotomy("Bender");
+
+	std::cout << std::endl << "Robotomy Form created" << std::endl;
+	std::cout << robotomy << std::endl;
+
+	// Try to sign a form with a bureaucrat with a grade too low
+	std::cout << "Try to sign a form with a bureaucrat with a grade too low" << std::endl;
+	/**/
+	try
+	{
+		robotomy.beSigned(bob);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	/**/
+
+	// Sign and execute the form!
+	std::cout << std::endl;
+	std::cout << "Try to Singing " << robotomy.getName() << std::endl;
+	/**/
+	try
+	{
+		bob.signForm(&robotomy);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	/**/
+	/**/
+	std::cout << "Singing " << robotomy.getName() << std::endl;
+	gilbert.signForm(&robotomy);
+
+	std::cout << "Executing " << robotomy.getName() << std::endl;
+	robotomy.execute(gilbert);
+
+	std::cout << "Try to execute" << robotomy.getName() << std::endl;
+	/**/
+	try
+	{
+		robotomy.execute(bob);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	/**/
+	/*** Presidential Pardon */
 
 
 	/*--*/

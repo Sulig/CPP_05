@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:22:27 by sadoming          #+#    #+#             */
-/*   Updated: 2025/03/11 18:56:00 by sadoming         ###   ########.fr       */
+/*   Updated: 2025/03/12 13:19:38 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "./inc/Bureaucrat.hpp"
 
 /* Constructor & destructor */
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", MIN_GRADE_TO_SIGN, MIN_GRADE_TO_EXECUTE)
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", S_MIN_GRADE_TO_SIGN, S_MIN_GRADE_TO_EXECUTE)
 {
 	this->_target = THIS_DIRECTORY;
 	std::cout << "ShrubberyCreationForm created" << std::endl;
 }
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : AForm("ShrubberyCreationForm", MIN_GRADE_TO_SIGN, MIN_GRADE_TO_EXECUTE)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : AForm("ShrubberyCreationForm", S_MIN_GRADE_TO_SIGN, S_MIN_GRADE_TO_EXECUTE)
 {
 	this->_target = target;
 	std::cout << "ShrubberyCreationForm created" << std::endl;
